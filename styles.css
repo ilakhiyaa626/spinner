@@ -1,0 +1,91 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.slot-machine {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 20px auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.reel-container {
+    width: 100px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-right: 1px solid #333;
+}
+
+.reel-container:last-child {
+    border-right: none;
+}
+
+.reel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.reel div {
+    font-size: 2rem;
+    line-height: 100px;
+    text-align: center;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+label, input, button {
+    display: block;
+    margin: 10px auto;
+}
+
+input {
+    padding: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#message {
+    font-weight: bold;
+}
+
+#balance {
+    font-size: 1.2rem;
+}
+
+@keyframes spin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-300%); }
+}
+
+.reel.spinning {
+    animation: spin 2s ease-out;
+}
